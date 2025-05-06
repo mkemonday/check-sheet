@@ -17,6 +17,22 @@ use App\Livewire\Users\Manage as UsersManage;
 use App\Models\DailyCheck;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/link-storage', function () {
+    $target = storage_path('app/public');
+    $link = public_path('storage');
+
+    if (file_exists($link)) {
+        return "Link already exists: $link";
+    }
+
+    try {
+        symlink($target, $link);
+        return "Symbolic link created successfully: $link → $target";
+    } catch (\Exception $e) {
+        return "Failed to create symbolic link: " . $e->getMessage();
+    }
+});
+
 Route::get('/', function () {
     return redirect()->route('dashboard');
 })->name('home');

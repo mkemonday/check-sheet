@@ -93,7 +93,7 @@ class DailyCheckForm extends Component
         ]);
 
         $statusValue = [
-            'no_problem'    => 'checked',
+            'no_problem'    => 'no_problem',
             'minor_problem' => 'minor_problem',
             'major_problem' => 'major_problem',
         ][$this->status];
