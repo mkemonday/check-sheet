@@ -3,6 +3,7 @@
 use App\Livewire\Daily\DailyCheckForm;
 use App\Livewire\Daily\DailyCheckMatrix;
 use App\Livewire\Daily\UploadPhoto;
+use App\Livewire\Dashboard\MachineInspectionReport;
 use App\Livewire\Permissions\Manage as PermissionsManage;
 use App\Livewire\Roles\Manage;
 use App\Livewire\Settings\Appearance;
@@ -42,6 +43,8 @@ Route::middleware(['auth'])->group(function () {
     // ->middleware('signed');
 
     Route::get('daily/upload-photo', UploadPhoto::class)->name('daily.upload-photo');
+
+    Route::get('/machine-report', MachineInspectionReport::class)->name('machine.report');
 
     Route::get('users/manage', UsersManage::class)->name('users.manage')->middleware('can:view-users');
     Route::get('users/assign-roles', AssignRoles::class)->name('users.assign-roles')->middleware('can:view-users');

@@ -88,14 +88,14 @@ class DailyCheckForm extends Component
         $this->validate([
             'check_item_id' => 'required|exists:check_items,id',
             'check_date'    => 'required|date',
-            'status'        => 'required|in:ok,not_ok,na',
+            'status'        => 'required|in:no_problem,minor_problem,major_problem',
             'remarks'       => 'nullable|string',
         ]);
 
         $statusValue = [
-            'ok'     => 'checked',
-            'not_ok' => 'not_checked',
-            'na'     => null,
+            'no_problem'    => 'checked',
+            'minor_problem' => 'minor_problem',
+            'major_problem' => 'major_problem',
         ][$this->status];
 
         try {

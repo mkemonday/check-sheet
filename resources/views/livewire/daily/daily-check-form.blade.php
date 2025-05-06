@@ -58,9 +58,9 @@
 
         <flux:select wire:model="status" label="Status">
             <flux:select.option value="">Select status ...</flux:select.option>
-            <flux:select.option value="ok">OK</flux:select.option>
-            <flux:select.option value="not_ok">Not OK</flux:select.option>
-            <flux:select.option value="na">N/A</flux:select.option>
+            <flux:select.option value="no_problem">No Problem</flux:select.option>
+            <flux:select.option value="minor_problem">Minor Problem</flux:select.option>
+            <flux:select.option value="major_problem">Major Problem</flux:select.option>
         </flux:select>
 
         <flux:textarea wire:model="remarks" label="Remarks" placeholder="Add remarks here..." />
